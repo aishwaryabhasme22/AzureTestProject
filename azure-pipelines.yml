@@ -1,5 +1,6 @@
 trigger:
   - master
+  
  
 pool: Default
  
@@ -10,6 +11,7 @@ variables:
   project: '**/aishwaryabhasme22.AzureTestProject.csproj'
  
 steps:
+
 - task: UseDotNet@2
   inputs:
     packageType: 'sdk'
@@ -26,7 +28,5 @@ steps:
     command: 'restore'
     restoreSolution: '$(solution)'
     feedsToUse: 'select'
-- task: Go@0
-  inputs:
-    command: 'get'
+
  
