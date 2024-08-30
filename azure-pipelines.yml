@@ -4,16 +4,15 @@
 # https://aka.ms/yaml
 
 trigger:
-- none
+- master
 
-pool:
-  vmImage: 'windows-latest'
+pool: Default
 
 variables:
   buildPlatform: 'Any CPU'
   buildConfiguration: 'Release'
-  solution: '**/RoundTheCode.AzureTestProject.sln'
-  project: '**/RoundTheCode.AzureTestProject.csproj'
+  solution: '**/aishwaryabhasme22.AzureTestProject.sln'
+  project: '**/aishwaryabhasme22.AzureTestProject.csproj'
 
 steps:
 - task: NuGetToolInstaller@1
@@ -49,8 +48,7 @@ steps:
 stages:
   - stage: DeployWebsite
     displayName: 'Deploy website'        
-    pool:
-      vmImage: windows-latest
+    pool: Default
     
     jobs:    
     - deployment: DeployWebsite
