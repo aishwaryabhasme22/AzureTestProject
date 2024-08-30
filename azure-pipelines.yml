@@ -1,5 +1,5 @@
 trigger:
-- master
+  - master
  
 pool: Default
  
@@ -10,10 +10,11 @@ variables:
   project: '**/aishwaryabhasme22.AzureTestProject.csproj'
  
 steps:
-- task: DotNetCoreCLI@2
+- task: UseDotNet@2
   inputs:
-    command: 'build'
-    projects: '$(solution)'
+    packageType: 'sdk'
+    version: 
+    includePreviewVersions: true
 - task: NuGetToolInstaller@1
   name: 'NuGetToolInstaller'
   displayName: 'NuGet tool installer'
